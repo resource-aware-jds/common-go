@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/resource-aware-jds/common-go/proto";
+
+package computenode;
+
+service ComputeNode {
+  rpc SendJob(Job) returns (google.protobuf.Empty) {}
+  rpc HealthCheck(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+}
+
+message Job {
+  string dockerImage = 1;
+}
