@@ -12,5 +12,12 @@ service ComputeNode {
 }
 
 message Job {
-  string dockerImage = 1;
+  int32 jobID = 1;
+  string dockerImage = 2;
+}
+
+message ReportJob {
+  int32 jobID = 1;
+  int64 totalJob = 2;
+  int64 currentJob = 3;
 }
